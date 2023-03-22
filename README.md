@@ -28,7 +28,7 @@ Ini adalah Latihan 1
 </html>
 ```
 ### Latihan
-Ini adalah Latihan 2
+Ini adalah Latihan 2 <br>
 ![Gambar](img/2.png)
 
 ### Code
