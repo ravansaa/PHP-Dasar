@@ -288,7 +288,7 @@ Ini adalah Latihan 10 <br>
 </html>
 ```
 ### Latihan
-Ini adalah Latihan Form Input
+Ini adalah Latihan Form Input <br>
 ![Gambar](img/11.png)
 ![Gambar](img/11a.png)
 
