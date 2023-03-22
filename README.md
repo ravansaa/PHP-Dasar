@@ -59,7 +59,7 @@ Ini adalah Latihan 2 <br>
 </html>
 ```
 ### Latihan
-Ini adalah Latihan 3
+Ini adalah Latihan 3 <br>
 ![Gambar](img/3.png)
 
 ### Code
@@ -115,7 +115,7 @@ Ini adalah Latihan 4
 </html>
 ```
 ### Latihan
-Ini adalah Latihan 5
+Ini adalah Latihan 5 <br>
 ![Gambar](img/5.png)
 
 ### Code
@@ -140,7 +140,7 @@ Ini adalah Latihan 5
 </html>
 ```
 ### Latihan
-Ini adalah Latihan 6
+Ini adalah Latihan 6 <br>
 ![Gambar](img/6.png)
 
 ### Code
@@ -171,7 +171,7 @@ Ini adalah Latihan 6
 </html>
 ```
 ### Latihan
-Ini adalah Latihan 7
+Ini adalah Latihan 7 <br>
 ![Gambar](img/7.png)
 
 ### Code
@@ -262,7 +262,7 @@ Ini adalah Latihan 9
 </html>
 ```
 ### Latihan
-Ini adalah Latihan 10
+Ini adalah Latihan 10 <br>
 ![Gambar](img/10.png)
 
 ### Code
@@ -285,5 +285,83 @@ Ini adalah Latihan 10
     } while ($i <= 10);
   ?>
 </body>
+</html>
+```
+### Latihan
+Ini adalah Latihan Form Input
+![Gambar](img/11.png)
+![Gambar](img/11a.png)
+
+### Code
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pemrograman WEB 2</title>
+    <link rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h2>Tugas Form Input</h2>
+    <form method="post" style="align-items: center;">
+        <label for="nama">Nama :</label>
+        <input type="text" name="nama" required>
+        <br>
+        <label for="tanggal_lahir">Tanggal lahir :</label>
+        <input type="date" name="tgl_lahir" required>
+        <br>
+        <label for="pekerjaan">Pekerjaan :</label>
+        <select name="pekerjaan">
+            <option value="">- PILIH -</option>
+            <option value="Direktur">Direktur</option>
+            <option value="Manager">Manager</option>
+            <option value="Staff">Staff</option>
+        </select>
+        <br>
+        <button type="submit" name="submit" value="submit">Submit</button>
+    </form>
+    <?php
+
+    if (isset($_POST['submit'])) {
+        $nama = $_POST['nama'];
+        $tgl_lahir = $_POST['tgl_lahir'];
+        $pekerjaan = $_POST['pekerjaan'];
+        $today = date_create(date("Y-m-d"));
+        $birth = date_create($tgl_lahir);
+        $umur = date_diff($today, $birth)->y;
+        switch ($pekerjaan) {
+            case "Direktur":
+                $gaji = 25000000;
+                $pajak = 0.01;
+                $thp = $gaji - ($gaji * $pajak);
+                break;
+            case "Manager":
+                $gaji = 15000000;
+                $pajak = 0.01;
+                $thp = $gaji - ($gaji * $pajak);
+                break;
+            case "Staff":
+                $gaji = 6000000;
+                $pajak = 0.01;
+                $thp = $gaji - ($gaji * $pajak);
+                break;
+            default:
+                $gaji = 0;
+                break;
+        }
+        echo "<br><br>";
+        echo "Nama Pekerja: " . $nama . "<br>";
+        echo "Tanggal Lahir: " . $tgl_lahir . "<br>";
+        echo "Umur: " . $umur . " Tahun<br>";
+        echo "Pekerjaan: " . $pekerjaan . "<br>";
+        echo "Gaji sebelum kena pajak = Rp. $gaji <br>";
+        echo "Gaji yang di terima = Rp. $thp";
+    }
+    ?>
+</body>
+
 </html>
 ```
