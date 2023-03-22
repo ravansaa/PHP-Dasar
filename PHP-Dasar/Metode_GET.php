@@ -7,11 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-<body>
   <h1>Predefine Variable</h1>
   <?php
     echo 'Selamat Datang ' . $_GET['nama'];
   ?>
-</body>
 </body>
 </html>
